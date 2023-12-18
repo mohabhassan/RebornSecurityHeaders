@@ -21,7 +21,7 @@ public:
 	void (*KickClient)(int client_num, const char* reason, const char* public_reason);
 
 	void (*Printf)(const char* format, ...);
-	void (*centerprintf)(gentity_t* ent, const char* format, ...);
+	void (*centerprintf)(gentityAA_t* ent, const char* format, ...);
 
 
 	bool HookFunction(_Inout_ PVOID* ppPointerOriginal, _In_ PVOID pDetour);
@@ -34,16 +34,16 @@ public:
 	char*	(*RB_PreClientConnect)(int clientNum, qboolean firstTime);
 
 	//Reborn should return false to stop executing ClientThink or true to allow execution.
-	bool	(*RB_PreClientThink)(gentity_t* ent, userCmd_t* ucmd, userEyes_t* eyeInfo);
+	bool	(*RB_PreClientThink)(gentityAA_t* ent, userCmd_t* ucmd, userEyes_t* eyeInfo);
 
 	//Nothing special here.
-	void	(*RB_ClientUserinfoChanged)(gentity_t* ent, char* userInfo);
+	void	(*RB_ClientUserinfoChanged)(gentityAA_t* ent, char* userInfo);
 
 	//Nothing special here.
 	void	(*RB_InitGame)(int startTime, int randomSeed);
 
 	//Nothing special here.
-	void	(*RB_ClientDisconnect)(gentity_t* ent);
+	void	(*RB_ClientDisconnect)(gentityAA_t* ent);
 
 };
 
