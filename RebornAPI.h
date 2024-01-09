@@ -24,7 +24,7 @@ public:
 	void (*centerprintf)(gentityAA_t* ent, const char* format, ...);
 
 
-	bool HookFunction(_Inout_ PVOID* ppPointerOriginal, _In_ PVOID pDetour);
+	bool (*HookFunction)(_Inout_ PVOID* ppPointerOriginal, _In_ PVOID pDetour);
 };
 
 class RebornExports
