@@ -1,10 +1,10 @@
 #pragma once
 
 #ifdef REBORNSECURITYFIXES_EXPORTS
-#define REBORNSECURITYFIXES_API __declspec(dllexport)
+//#define REBORNSECURITYFIXES_API __declspec(dllexport)
 #include "dgamex86.h"
-#else
-#define REBORNSECURITYFIXES_API __declspec(dllimport)
+//#else
+//#define REBORNSECURITYFIXES_API __declspec(dllimport)
 #endif
 
 class RebornImports
@@ -47,4 +47,4 @@ public:
 
 };
 
-REBORNSECURITYFIXES_API RebornExports* GetRebornAPI(RebornImports* imports);
+RebornExports* GetRebornAPI(RebornImports* imports);
