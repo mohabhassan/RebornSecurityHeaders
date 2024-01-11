@@ -23,6 +23,7 @@ public:
 	void (*Printf)(const char* format, ...);
 	void (*centerprintf)(gentityAA_t* ent, const char* format, ...);
 
+	void (*Trace)(trace_t* results, const vec3_t start, const vec3_t mins, const vec3_t maxs, const vec3_t end, int passEntityNum, int contentMask, qboolean cylinder, qboolean traceDeep);
 
 	bool (*HookFunction)(_Inout_ PVOID* ppPointerOriginal, _In_ PVOID pDetour);
 };
@@ -31,6 +32,7 @@ class RebornExports
 {
 public:
 	//Reborn should return reason string to deny player or NULL to allow player.
+	//Reason must live even out of RB_PreClientConnect's scope
 	char*	(*RB_PreClientConnect)(int clientNum, qboolean firstTime);
 
 	//Reborn should return false to stop executing ClientThink or true to allow execution.
