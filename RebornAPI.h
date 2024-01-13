@@ -26,6 +26,7 @@ public:
 	void (*Trace)(trace_t* results, const vec3_t start, const vec3_t mins, const vec3_t maxs, const vec3_t end, int passEntityNum, int contentMask, qboolean cylinder, qboolean traceDeep);
 
 	bool (*HookFunction)(_Inout_ PVOID* ppPointerOriginal, _In_ PVOID pDetour);
+	bool (*UnHookFunction)(_Inout_ PVOID* ppPointerOriginal, _In_ PVOID pDetour);
 };
 
 class RebornExports
