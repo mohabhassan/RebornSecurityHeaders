@@ -27,6 +27,13 @@ public:
 
 	void(*AddCommand)(const char* cmdName, xcommand_t cmdFunction);
 
+
+	int (*Argc)();
+	char* (*Argv)(int arg);
+	char* (*Args)();
+
+	char* (*Info_ValueForKey)(const char* s, const char* key);
+
 	bool (*HookFunction)(_Inout_ PVOID* ppPointerOriginal, _In_ PVOID pDetour);
 	bool (*UnHookFunction)(_Inout_ PVOID* ppPointerOriginal, _In_ PVOID pDetour);
 };
@@ -48,7 +55,13 @@ public:
 	void	(*RB_InitGame)(int startTime, int randomSeed);
 
 	//Nothing special here.
+	void	(*RB_Shutdown)();
+
+	//Nothing special here.
 	void	(*RB_ClientDisconnect)(gentityAA_t* ent);
+
+	//Reborn should return false to stop executing ClientCommand or true to allow execution.
+	bool	(*RB_PreClientCommand)(gentityAA_t* ent);
 
 };
 
